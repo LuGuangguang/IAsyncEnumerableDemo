@@ -1,0 +1,19 @@
+﻿<Window x:Class="IAsyncEnumerable.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IAsyncEnumerable"
+        mc:Ignorable="d"
+        x:Name="me"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <TextBlock Text="{Binding ElementName=me,Path=DebugText}"/>
+            <Button Margin="2" Content="普通方式开具发票" Click="Button_Click"/>
+            <Button Margin="2" Content="Task非迭代方式异步开具发票" Click="btn_MockIOAsync_Click"/>
+            <Button Margin="2" Content="yield异步开具发票(新特性)" Click="btn_MockIOYieldAsync_Click"/>
+            <Button Margin="2" Content="多线程Task异步开具发票（高性能但乱序）" Click="btn_MockIOPerformanceAsync_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
